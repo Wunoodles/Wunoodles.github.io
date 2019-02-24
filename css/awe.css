@@ -11,8 +11,9 @@ body{
 }
 
 a {
-  color: #9fa4a4;
+  color: #5599FF;
   text-decoration: none;
+  font-weight: bolder;
 }
 a:hover {
   text-decoration: underline;
@@ -47,10 +48,10 @@ h1, h2, h3, h4 {
 }
 .two-columns .content {
   float: left;
-  width: 70%;
+  width: 83%;
 }
 .two-columns .widgetarea {
-  width: 28%;
+  width: 15%;
   float: right;
 }
 .container {

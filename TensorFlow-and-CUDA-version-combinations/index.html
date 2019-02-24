@@ -46,20 +46,29 @@
     <div class="post box nocover">
       <em class="date"><span>24</span>Feb</em>
       <h2 class="post-title"><a href="/TensorFlow-and-CUDA-version-combinations/">TensorFlow and CUDA version combinations</a></h2>
-      <div class="post-content"><p>在使用GPU之前, 必須先安裝許多套件<br>像是 tensorflow-gpu, cuda, CuDNN<br>但是這些套件之間有版本上的限制</p>
-<h2 id="查詢套件在電腦上的版本"><a href="#查詢套件在電腦上的版本" class="headerlink" title="查詢套件在電腦上的版本"></a>查詢套件在電腦上的版本</h2><h3 id="cuda-version"><a href="#cuda-version" class="headerlink" title="cuda version"></a>cuda version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvcc --version</span><br></pre></td></tr></table></figure>
+      <div class="post-content"><blockquote>
+<p>在使用GPU之前, 必須先安裝許多套件<br>像是 tensorflow-gpu, cuda, CuDNN<br>但是這些套件之間有版本上的限制</p>
+</blockquote>
+<h2 id="查詢套件在電腦上的版本"><a href="#查詢套件在電腦上的版本" class="headerlink" title="查詢套件在電腦上的版本"></a>查詢套件在電腦上的版本</h2><hr>
+
+<h3 id="cuda-version"><a href="#cuda-version" class="headerlink" title="cuda version"></a>cuda version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvcc --version</span><br></pre></td></tr></table></figure>
 <p>or<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/cuda/version.txt</span><br></pre></td></tr></table></figure></p>
 <h3 id="CuDNN-version"><a href="#CuDNN-version" class="headerlink" title="CuDNN version"></a>CuDNN version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
 <h3 id="tensorflow-gpu-version"><a href="#tensorflow-gpu-version" class="headerlink" title="tensorflow-gpu version"></a>tensorflow-gpu version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip list | grep tensorflow</span><br></pre></td></tr></table></figure>
+<hr>
+
 <h2 id="相對應的版本清單"><a href="#相對應的版本清單" class="headerlink" title="相對應的版本清單"></a>相對應的版本清單</h2><p><img src="../images/20190224.png" alt="image"></p>
+<hr>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a href="https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible" target="_blank" rel="noopener">stackoverflow</a></p>
 </div>
 
       <div class="bottom-panel">
-        <ul class="social-likes" data-url="/TensorFlow-and-CUDA-version-combinations/">
+        <!-- <ul class="social-likes" data-url="/TensorFlow-and-CUDA-version-combinations/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
-        </ul>
+        </ul> -->
       </div>
     </div>
     
@@ -94,7 +103,8 @@
     <li>
       <div class="text-holder">
         <h3 class="link-title"><a href="/TensorFlow-and-CUDA-version-combinations/">TensorFlow and CUDA version combinations</a></h3>
-        <p>在使用GPU之前, 必須先安裝許多套件像是 tensorflow-gpu, cuda, CuDNN但</p>
+        <p>
+在使用GPU之前, 必須先安裝許多套件像是 tensorflow-gpu, cuda, CuDNN</p>
       </div>
     </li>
   

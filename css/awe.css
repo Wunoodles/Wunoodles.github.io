@@ -5,7 +5,7 @@
 
 body{
   color: #000000;
-  font: 15px Helvetica, Arial, sans-serif;
+  font: 18px Helvetica, Arial, sans-serif;
   line-height: 1.8em;
   background: #edf3f2 url(../images/bg-page.jpg);
 }
@@ -157,7 +157,7 @@ h1, h2, h3, h4 {
 .profile .heading {
   height: 100px;
   position: relative;
-  padding: 89px 0 0 250px;
+  padding: 89px 0 30px 250px;
   color: #b0b2b2;
 }
 .profile-img {
@@ -173,7 +173,8 @@ h1, h2, h3, h4 {
   line-height: 38px;
   color: #fff;
   display: block;
-  margin: 0 0 2px -2px;
+  margin: 0 0 0px -2px;
+  top:-10px;
 }
 .user a {
   color: #fff;
@@ -184,6 +185,12 @@ h1, h2, h3, h4 {
   padding-left: 20px;
   display: inline-block;
   background: url(../images/marker-locate.png) no-repeat 1px 4px;
+}
+.top_content{
+  color:black;
+  background-color: #ebf3ca;
+  border-radius:5px;
+  padding:2px;
 }
 .setting {
   border-bottom: 1px solid #ddd;

@@ -41,90 +41,48 @@
 </div>
 
     
-<div class="two-columns">
+<div class="two-columns post-page">
   <div class="content">
 
+    <div class="post box nocover">
+      <em class="date"><span>25</span>Feb</em>
+      <h2 class="post-title">
+        <a href="/Allocate-gpu-memory/">Allocate gpu memory</a><br>
+        <span style="font-size:13px; color:darkgray;">2019/02/25</span>
+      </h2>
+      <div class="post-content"><center><br>Tensorflow 在默認設定下，每當執行一個程式，<br>他會先將看的到的GPU 的 Memory 給全部佔滿，<br>所以就算只有用到一點點，其他程式也沒辦法搶到 Memory 資源去執行。<br>為了不要浪費資源，我們在執行程式前要先限制這個程式可以吃的 memory size<br></center>
 
-<!-- 
-
-    <div class="post box">
-      <div class="coverimg imgLiquid">
-        <img src="../images/20190225.png">
-        <em class="date"><span>25</span>Feb</em>
-        <h2 class="post-title"><a href="/Allocate-gpu-memory/">Allocate gpu memory</a></h2>
-      </div>
-      <div class="post-content">Tensorflow 在默認設定下，每當執行一個程式，他會先將看的到的GPU 的 Memory 給全部佔滿，所以就算只有用到一點點，其他程式也沒辦法搶到 Memory 資源去執行。為了不要浪費資源，我們在執行程式前要先限制這個程式可以吃的 memory size
-
-方法如下:
-1234import tensorflow as tf# 設定程式只能使用 40 %的 memory 資源gpu_opti</div>
- -->
-      
-      <div class="post box nocover">
-        <em class="date"><span>25</span>Feb</em>
-        <h2 class="post-title">
-              <a href="/Allocate-gpu-memory/">Allocate gpu memory</a><br>
-              <span style="font-size:13px; color:darkgray;">2019/02/25</span>
-        </h2>
-        <div class="post-content">Tensorflow 在默認設定下，每當執行一個程式，他會先將看的到的GPU 的 Memory 給全部佔滿，所以就算只有用到一點點，其他程式也沒辦法搶到 Memory 資源去執行。為了不要浪費資源，我
-      </div>
+<p>方法如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment"># 設定程式只能使用 40 %的 memory 資源</span></span><br><span class="line">gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=<span class="number">0.4</span>) </span><br><span class="line">sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))</span><br></pre></td></tr></table></figure>
+<p>or </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config = tf.ConfigProto() </span><br><span class="line"><span class="comment"># 該設置會自動使用最少的GPU memory 來運行程式</span></span><br><span class="line">config.gpu_options.allow_growth = <span class="keyword">True</span> </span><br><span class="line">session = tf.Session(config=config)</span><br></pre></td></tr></table></figure>
+<p>可以使用以下指令來檢查GPU的使用率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvidia-smi</span><br></pre></td></tr></table></figure></p>
+<p>結果如下:</p>
+<center><img src="../images/20190225.png" alt="image"></center></div>
 
       <div class="bottom-panel">
-        <!-- <ul class="social-likes" data-url="https://wunoodles.github.io/Allocate-gpu-memory/">
+        <!-- <ul class="social-likes" data-url="/Allocate-gpu-memory/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
         </ul> -->
-        <a href="https://wunoodles.github.io/Allocate-gpu-memory/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
-
-
-<!-- 
-
-    <div class="post box">
-      <div class="coverimg imgLiquid">
-        <img src="../images/20190224.png">
-        <em class="date"><span>24</span>Feb</em>
-        <h2 class="post-title"><a href="/TensorFlow-and-CUDA-version-combinations/">TensorFlow and CUDA version combinations</a></h2>
-      </div>
-      <div class="post-content">在使用GPU來執行keras或tensorflow時，在安裝環境的時候時常會遇到 :
-“ ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory “
-這個原因是因為tensorflow-gpu版本對應不上 cuda 的版本
-有兩個可以解決的方法:
-
-降低 tensorflow-</div>
- -->
       
-      <div class="post box nocover">
-        <em class="date"><span>24</span>Feb</em>
-        <h2 class="post-title">
-              <a href="/TensorFlow-and-CUDA-version-combinations/">TensorFlow and CUDA version combinations</a><br>
-              <span style="font-size:13px; color:darkgray;">2019/02/24</span>
-        </h2>
-        <div class="post-content">在使用GPU來執行keras或tensorflow時，在安裝環境的時候時常會遇到 :
-“ ImportError: libcublas.so.8.0: cannot open shared objec
-      </div>
-
-      <div class="bottom-panel">
-        <!-- <ul class="social-likes" data-url="https://wunoodles.github.io/TensorFlow-and-CUDA-version-combinations/">
-          <li class="facebook" title="like"></li>
-          <li class="twitter" title="twitte"></li>
-          <li class="plusone" title="google"></li>
-        </ul> -->
-        <a href="https://wunoodles.github.io/TensorFlow-and-CUDA-version-combinations/#disqus_thread" class="btn-comment">Comments</a>
-      </div>
-    </div>
-
     
-
-<ul class="paging box">
-  
-  <span class="page-number">Page 1 of 1</span>
-  
-</ul>
-
+    <div class="widget post-comment">
+      <h2 class="title">Comments</h2>
+      <section id="comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      
+    </section></div>
+    
   </div>
-
+  <div id="totop" style="position:fixed;bottom:150px; right:5%; cursor: pointer;">
+    <a title="返回頂部"><img width="30%" src="/images/totop.png"></a>
+</div>
   <div class="widgetarea">
 
     
@@ -183,6 +141,8 @@
   </div>
 </div>
 
+<script src="/js/totop.js"></script>
+
 
   </div>
   
@@ -201,11 +161,13 @@
 <script>
   var disqus_shortname = 'noodles-1';
   
+  var disqus_url = 'https://wunoodles.github.io/Allocate-gpu-memory/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//go.disqus.com/count.js';
+    dsq.src = '//go.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

@@ -47,6 +47,55 @@
 
 <!-- 
 
+    <div class="post box nocover">
+      <em class="date"><span>26</span>Feb</em>
+      <h2 class="post-title"><a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a></h2>
+      <div class="post-content">DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用相同的索引 。DataFrame 可以完成很多方便的事情，像是可以使用類似sql的用法，或是rolling等等。以下會列出幾個非常實用的例子:
+
+選取特定範圍的資料:
+
+1data.loc[data.tx_dt &gt; '2015-00-00',:]
+
+列出cloumns裡有出現特定字詞的資料 (正規表示式):
+
+1df.filter(regex='spike')
+
+將資料根據某個 key 來依序列出:
+
+1for key,data in data.groupby(['isin','currency']):
+
+列出dataFrame詳細資訊: (顯示平均，標準差，最小值及最大值)
+
+1pd.describe()
+
+匯出csv
+
+1df.to_csv(filename , index=Fal
+      </div>
+ -->
+      
+      <div class="post box nocover">
+        <em class="date"><span>26</span>Feb</em>
+        <h2 class="post-title">
+              <a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a><br>
+              <span style="font-size:13px; color:darkgray;">2019/02/26</span>
+        </h2>
+        <div class="post-content">DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用相同的索引 。DataFrame 可以完成很多方便的事情，像是可以使用類似sql的用法，或是roll
+      </div>
+
+      <div class="bottom-panel">
+        <!-- <ul class="social-likes" data-url="https://wunoodles.github.io/python資料分析的好套件-Pandas/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul> -->
+        <a href="https://wunoodles.github.io/python資料分析的好套件-Pandas/#disqus_thread" class="btn-comment">Comments</a>
+      </div>
+    </div>
+
+
+<!-- 
+
     <div class="post box">
       <div class="coverimg imgLiquid">
         <img src="../images/20190225.png">
@@ -171,12 +220,14 @@ Genera
     
     <a class="button" href="/tags/tensorflow/">tensorflow</a>
     
+    <a class="button" href="/tags/Python/">Python</a>
+    
   </div>
   
 </div>
 
 
-<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/tensorflow/" style="font-size: 12px;">tensorflow</a></div>
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/tensorflow/" style="font-size: 24px;">tensorflow</a></div>
 
     
 
@@ -185,6 +236,14 @@ Genera
 
 <ul class="widget blogroll">
   <h3 class="title">Recent Post</h3>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a></h3>
+        <p>DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用</p>
+      </div>
+    </li>
   
     
     <li>

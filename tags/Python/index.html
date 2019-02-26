@@ -41,74 +41,84 @@
 </div>
 
     
-<div class="two-columns post-page">
+<div class="two-columns">
   <div class="content">
 
+
+<!-- 
+
     <div class="post box nocover">
-      <em class="date"><span>24</span>Feb</em>
-      <h2 class="post-title">
-        <a href="/about/index.html">✐ About Me</a><br>
-        <span style="font-size:13px; color:darkgray;">2019/02/24</span>
-      </h2>
-      <div class="post-content"><hr>
-<h3 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h3><p>✐ 清華大學 資訊系統與應用研究所 ( 2015～2017 )<br>✐ 彰化師範大學 資訊工程學系 ( 2011～2015 )</p>
-<h3 id="專案作品"><a href="#專案作品" class="headerlink" title="專案作品"></a>專案作品</h3><h3 id="☛-Gist-api-2015"><a href="#☛-Gist-api-2015" class="headerlink" title="☛ Gist-api , 2015"></a>☛ <a href="https://github.com/v123582/gist-api" target="_blank" rel="noopener">Gist-api</a> , 2015</h3><blockquote>
-<p>交通部創新API 應用競賽 - 高雄地區大眾運輸接駁規劃 , 佳作<br>Python, Google Map API, Html</p>
-</blockquote>
-<h3 id="☛-Teacher-manager-2015"><a href="#☛-Teacher-manager-2015" class="headerlink" title="☛ Teacher-manager, 2015"></a>☛ <a href="https://github.com/v123582/teacher-manager" target="_blank" rel="noopener">Teacher-manager</a>, 2015</h3><blockquote>
-<p>Laravel, PHP, CSS, Html</p>
-</blockquote>
-<h3 id="☛-ChineseSearchEngine-2015-2015"><a href="#☛-ChineseSearchEngine-2015-2015" class="headerlink" title="☛ ChineseSearchEngine, 2015, 2015"></a>☛ <a href="https://github.com/Wunoodles/ChineseSearchEngine" target="_blank" rel="noopener">ChineseSearchEngine, 2015</a>, 2015</h3><blockquote>
-<p>清華大學自然語言期末專題<br>Python, Flask, MapReduce, Html</p>
-</blockquote>
-<h3 id="經驗"><a href="#經驗" class="headerlink" title="經驗"></a>經驗</h3><p>✐ 網頁工程師  華人生涯網 Chinese Career Net (2013~2014)</p>
-<h3 id="活動參與"><a href="#活動參與" class="headerlink" title="活動參與"></a>活動參與</h3><ul>
-<li>2015  Hour Of Code by SITCON, 助教</li>
-<li>2015  資料人同樂會, 會眾</li>
-<li>2015  亞大開放資料高峰論壇 Asia Pacific Open Data Summit, 會眾</li>
-<li>HadoopCon 2015 , COSCUP 2015, SITCON 2015</li>
-</ul>
-<h3 id="校園經歷"><a href="#校園經歷" class="headerlink" title="校園經歷"></a>校園經歷</h3><ul>
-<li><p>2013~2014  彰化師範大學 資訊工程學系 副會長</p>
-<blockquote>
-<p>在任期內舉辦「全校性電競大賽」的總召,並且與欣亞、ASUS、巨匠電腦、Cooler Master、Garena 等等廠商合作。</p>
-</blockquote>
-</li>
-<li><p>2013~2014  彰化師範大學 漁村服務社 副社長</p>
-<blockquote>
-<p>與社長一起籌畫四天服務學習的活動，包含受訓服務員、接洽學校和安排活動等等。</p>
-</blockquote>
-</li>
-</ul>
-</div>
+      <em class="date"><span>26</span>Feb</em>
+      <h2 class="post-title"><a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a></h2>
+      <div class="post-content">DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用相同的索引 。DataFrame 可以完成很多方便的事情，像是可以使用類似sql的用法，或是rolling等等。以下會列出幾個非常實用的例子:
+
+選取特定範圍的資料:
+
+1data.loc[data.tx_dt &gt; '2015-00-00',:]
+
+列出cloumns裡有出現特定字詞的資料 (正規表示式):
+
+1df.filter(regex='spike')
+
+將資料根據某個 key 來依序列出:
+
+1for key,data in data.groupby(['isin','currency']):
+
+列出dataFrame詳細資訊: (顯示平均，標準差，最小值及最大值)
+
+1pd.describe()
+
+匯出csv
+
+1df.to_csv(filename , index=Fal
+      </div>
+ -->
+      
+      <div class="post box nocover">
+        <em class="date"><span>26</span>Feb</em>
+        <h2 class="post-title">
+              <a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a><br>
+              <span style="font-size:13px; color:darkgray;">2019/02/26</span>
+        </h2>
+        <div class="post-content">DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用相同的索引 。DataFrame 可以完成很多方便的事情，像是可以使用類似sql的用法，或是roll
+      </div>
 
       <div class="bottom-panel">
-        <!-- <ul class="social-likes" data-url="/about/index.html">
+        <!-- <ul class="social-likes" data-url="https://wunoodles.github.io/python資料分析的好套件-Pandas/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
         </ul> -->
+        <a href="https://wunoodles.github.io/python資料分析的好套件-Pandas/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
-      
+
     
-    <div class="widget post-comment">
-      <h2 class="title">Comments</h2>
-      <section id="comments">
-        <div id="disqus_thread">
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-      
-    </section></div>
-    
+
+<ul class="paging box">
+  
+  <span class="page-number">Page 1 of 1</span>
+  
+</ul>
+
   </div>
-  <div id="totop" style="position:fixed;bottom:150px; right:5%; cursor: pointer;">
-    <a title="返回頂部"><img width="30%" src="/images/totop.png"></a>
-</div>
+
   <div class="widgetarea">
 
     
     
+<div class="tags widget">
+  <h3 class="title">Tags</h3>
+  <div style="text-align:center">
+    
+    <a class="button" href="/tags/tensorflow/">tensorflow</a>
+    
+    <a class="button" href="/tags/Python/">Python</a>
+    
+  </div>
+  
+</div>
+
 
 <div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/tensorflow/" style="font-size: 24px;">tensorflow</a></div>
 
@@ -161,8 +171,6 @@
   </div>
 </div>
 
-<script src="/js/totop.js"></script>
-
 
   </div>
   
@@ -181,13 +189,11 @@
 <script>
   var disqus_shortname = 'noodles-1';
   
-  var disqus_url = 'https://wunoodles.github.io/about/index.html';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
+    dsq.src = '//go.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

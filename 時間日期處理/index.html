@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta name="viewport" content="width=932" >
+  <meta name="MobileOptimized" content="932" >
+  <meta name="generator" content="MinYen">
+  <title>Wunoodles web</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/awe.css">
+  <link rel="stylesheet" type="text/css" href="/css/social-likes.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/imgLiquid-min.js"></script>
+  <script src="/js/social-likes.min.js"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    
+
+<div class="box profile">
+  <div class="heading" style="background: #3e5354 url(/images/bg-heading.jpg) no-repeat; background-size:cover;" ">
+    <div class="profile-img">
+      <a href="/"><img src="/images/me.jpg" width="135" height="180" alt="image description"></a>
+    </div>
+    <strong class="user"><a href="/">MinYen</a></strong>
+    <span class="locate">Taiwan</span><br>
+    <span class="top_content">  " I'm a slow walker, but I never walk backwards. -- US President Lincoln "  </span>
+  </div>
+  <div class="setting">
+    <a href="/about" class="btn-profile">Profile</a>
+    <!-- <a href="/" class="btn-photos">Photos</a> -->
+    <a target="_blank" href="https://github.com/Wunoodles" class="btn-github">github</a>
+    <a target="_blank" href="https://www.facebook.com/mian.mian.92" class="btn-follow">Follow me</a>
+  </div>
+</div>
+
+    
+<div class="two-columns post-page">
+  <div class="content">
+
+    <div class="post box nocover">
+      <em class="date"><span>15</span>May</em>
+      <h2 class="post-title">
+        <a href="/時間日期處理/">時間日期處理</a><br>
+        <span style="font-size:13px; color:darkgray;">2019/05/15</span>
+      </h2>
+      <div class="post-content"><p>在處理時序資料的時候，常會遇到需要進行時間轉換的問題<br>像是查詢往後22天的日期是哪一天 ?<br>這個日期是星期幾 ?<br>如何將字串轉成 datetime 格式 ?</p>
+<p>以下介紹兩個在處理時間常會用到的 python package，分別是 <span style="color:blue">datetime 以及 dateutil </span></p>
+<h3 id="datetime"><a href="#datetime" class="headerlink" title="- datetime"></a>- datetime</h3><ol>
+<li><p>查詢現在時間</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import datetime</span><br><span class="line">datetime.datetime.now()</span><br><span class="line"><span class="comment">#datetime.datetime(2019, 5, 15, 22, 10, 54, 789000)</span></span><br><span class="line">datetime.date.today()</span><br><span class="line"><span class="comment">#datetime.date(2019, 5, 15)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>將datetime及date轉成字串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.now().strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br><span class="line"><span class="comment">#'2019-05-15 22:01:57'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p><span style="font-size:10pt;">%y 兩位數的年份表示（00-99）, %Y 四位數的年份表示（000-9999）, %m 月份（01-12）,%d 月内中的一天（0-31）,%H 24小時制小時数（0-23）, %I 12小時制小時数（01-12）,%M 分鐘数（00=59）, %S 秒（00-59）<br></span></p>
+</blockquote>
+<ol start="3">
+<li><p>獲取當天開始以及結束時間</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.min)</span><br><span class="line"><span class="comment">#datetime.datetime(2019, 5, 15, 0, 0)</span></span><br><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.max)</span><br><span class="line"><span class="comment">#datetime.datetime(2019, 5, 15, 23, 59, 59, 999999)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>獲取兩個datetime的時間差</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(datetime.datetime(2019,5,20,12,0,0) - datetime.datetime.now()).total_seconds()</span><br><span class="line"><span class="comment">#394778.361 (s)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>獲取日期的相關資訊</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime(2019,5,15).weekday()</span><br><span class="line"><span class="comment">#2 (Monday is 0 and Sunday is 6)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="dateutil-擴增datetime-package的功能"><a href="#dateutil-擴增datetime-package的功能" class="headerlink" title="- dateutil (擴增datetime package的功能)"></a>- dateutil (擴增datetime package的功能)</h3><ol>
+<li>將現在時間往前往後移動</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.now()</span><br><span class="line"><span class="comment">#datetime.datetime(2019, 5, 15, 22, 33, 23, 594000)</span></span><br><span class="line">datetime.datetime.now() + relativedelta(months=+1)</span><br><span class="line"><span class="comment">#datetime.datetime(2019, 6, 15, 22, 33, 23, 594000)</span></span><br><span class="line">datetime.datetime.now() + relativedelta(months=+1, days=+1)</span><br><span class="line"><span class="comment">#datetime.datetime(2019, 6, 16, 22, 33, 23, 594000)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><span style="font-size:10pt;"> relativedelta可調參數: years, months, days, weeks, hours, minutes, seconds, microseconds (數值可正可負，負代表過去，正代表未來)<br></span></p>
+</blockquote>
+<ol start="2">
+<li>常用function</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def last_month_cal(time_, month):</span><br><span class="line">    <span class="built_in">return</span> (datetime.datetime.strptime(time_,<span class="string">"%Y-%m-%d"</span>) + relativedelta(months=(-month))).strftime(<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line"></span><br><span class="line">last_month_cal(<span class="string">"2019-05-01"</span>, 3)</span><br><span class="line"><span class="comment">#'2019-02-01'</span></span><br></pre></td></tr></table></figure></div>
+
+      <div class="bottom-panel">
+        <!-- <ul class="social-likes" data-url="/時間日期處理/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul> -->
+      </div>
+    </div>
+      
+    
+    <div class="widget post-comment">
+      <h2 class="title">Comments</h2>
+      <section id="comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      
+    </section></div>
+    
+  </div>
+  <div id="totop" style="position:fixed;bottom:150px; right:5%; cursor: pointer;">
+    <a title="返回頂部"><img width="30%" src="/images/totop.png"></a>
+</div>
+  <div class="widgetarea">
+
+    
+    
+<div class="tags widget">
+  <h3 class="title">Tags</h3>
+  <div style="text-align:center">
+    
+    <a class="button" href="/tags/Python/">Python</a>
+    
+  </div>
+  
+</div>
+
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/tensorflow/" style="font-size: 12px;">tensorflow</a></div>
+
+    
+
+    
+      
+
+<ul class="widget blogroll">
+  <h3 class="title">Recent Post</h3>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/時間日期處理/">時間日期處理</a></h3>
+        <p>在處理時序資料的時候，常會遇到需要進行時間轉換的問題像是查詢往後22天的日期是哪一天 ?這個日期是星</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a></h3>
+        <p>DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/Allocate-gpu-memory/">Allocate gpu memory</a></h3>
+        <p>Tensorflow 在默認設定下，每當執行一個程式，他會先將看的到的 GPU 的 Memory 給</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/TensorFlow-and-CUDA-version-combinations/">TensorFlow and CUDA version combinations</a></h3>
+        <p>在使用GPU來執行keras或tensorflow時，在安裝環境的時候時常會遇到 :
+“ Impor</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/hello-world/">Hello World</a></h3>
+        <p>Welcome to Hexo! This is your very first post. Che</p>
+      </div>
+    </li>
+  
+</ul>
+
+
+    
+
+  </div>
+</div>
+
+<script src="/js/totop.js"></script>
+
+
+  </div>
+  
+<div class="footer">
+  <div class="container">
+    <a href="//github.com/kywk/hexo-theme-awe">AWE for hexo</a> inspired by <a href="http://goo.gl/H8OMRE">Awesome UI Kit</a>,
+    ported by <a href="//kywk.github.io/">MooCow (Aka. kywk)</a>.
+    
+    &copy; 2019 MinYen All Rights Reserved
+    
+  </div>
+</div>
+
+  <!-- disqus -->
+
+<script>
+  var disqus_shortname = 'noodles-1';
+  
+  var disqus_url = 'https://wunoodles.github.io/時間日期處理/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script>
+$(document).ready(function() {
+  $('.imgLiquid').imgLiquid({fill:true, fadeInTime:500});
+});
+</script>
+
+
+<!-- fancybox -->
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+</body>
+</html>

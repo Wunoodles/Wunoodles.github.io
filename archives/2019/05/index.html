@@ -41,68 +41,60 @@
 </div>
 
     
-<div class="two-columns post-page">
+<div class="two-columns">
   <div class="content">
 
+
+<!-- 
+
     <div class="post box nocover">
-      <em class="date"><span>24</span>Feb</em>
-      <h2 class="post-title">
-        <a href="/TensorFlow-and-CUDA-version-combinations/">TensorFlow and CUDA version combinations</a><br>
-        <span style="font-size:13px; color:darkgray;">2019/02/24</span>
-      </h2>
-      <div class="post-content"><p>在使用GPU來執行keras或tensorflow時，<br>在安裝環境的時候時常會遇到 :</p>
-<p><span style="color:red">“ ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory “</span></p>
-<p>這個原因是因為tensorflow-gpu版本對應不上 cuda 的版本</p>
-<p>有兩個可以解決的方法:</p>
-<ol>
-<li>降低 tensorflow-gpu 版本 : pip install tensorflow-gpu==1.4.0</li>
-<li>提高 cuda 的版本 : yum install cuda-8-0</li>
-</ol>
-<blockquote>
-<p><span style="color:blue">Tensorflow-gpu, Cuda, CuDNN</span> , 這些套件之間有版本上的限制, 以下為教導如何查詢這些套件在電腦上的版本, 以及說明其之間版本的對應, 再來看看如何確認是否安裝成功。</p>
-</blockquote>
-<hr>
-<h3 id="查詢套件在電腦上的版本"><a href="#查詢套件在電腦上的版本" class="headerlink" title="查詢套件在電腦上的版本"></a><span style="color:#227700;font-weight:bolder;">查詢套件在電腦上的版本</span></h3><h3 id="cuda-version"><a href="#cuda-version" class="headerlink" title="cuda version"></a>cuda version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvcc --version</span><br></pre></td></tr></table></figure>
-<p>or<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/cuda/version.txt</span><br></pre></td></tr></table></figure></p>
-<h3 id="CuDNN-version"><a href="#CuDNN-version" class="headerlink" title="CuDNN version"></a>CuDNN version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
-<h3 id="tensorflow-gpu-version"><a href="#tensorflow-gpu-version" class="headerlink" title="tensorflow-gpu version"></a>tensorflow-gpu version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip list | grep tensorflow</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="相對應的版本清單"><a href="#相對應的版本清單" class="headerlink" title="相對應的版本清單"></a><span style="color:#227700;font-weight:bolder;">相對應的版本清單</span></h3><p><img src="../images/20190224.png" alt="image"> </p>
-<hr>
-<h3 id="確認是否安裝成功"><a href="#確認是否安裝成功" class="headerlink" title="確認是否安裝成功"></a><span style="color:#227700;font-weight:bolder;">確認是否安裝成功</span></h3><p>以下這段程式碼會列出tensorflow抓的到的 CPU 和 GPU 資源</p>
-<pre><code class="python"><span class="comment">#python</span>
-<span class="keyword">from</span> tensorflow.python.client <span class="keyword">import</span> device_lib
-print(device_lib.list_local_devices())
-</code></pre>
-<p>如下圖, 要是有順利抓到GPU，表示安裝成功，已經可以使用GPU來執行程式了~~~</p>
-<p><center><img src="../images/20190224-2.PNG" alt="image"></center></p>
-<hr>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a href="https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible" target="_blank" rel="noopener">stackoverflow</a></p>
-</div>
+      <em class="date"><span>15</span>May</em>
+      <h2 class="post-title"><a href="/時間日期處理/">時間日期處理</a></h2>
+      <div class="post-content">在處理時序資料的時候，常會遇到需要進行時間轉換的問題像是查詢往後22天的日期是哪一天 ?這個日期是星期幾 ?如何將字串轉成 datetime 格式 ?
+以下介紹兩個在處理時間常會用到的 python package，分別是 datetime 以及 dateutil 
+- datetime
+查詢現在時間
+12345import datetimedatetime.datetime.now()#datetime.datetime(2019, 5, 15, 22, 10, 54, 789000)datetime.date.today()#datetime.date(2019, 5, 15)
+
+將datetime及date轉成字串
+12datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")#'2019-05-15 22:01:57'
+
+
+
+%y 兩
+      </div>
+ -->
+      
+      <div class="post box nocover">
+        <em class="date"><span>15</span>May</em>
+        <h2 class="post-title">
+              <a href="/時間日期處理/">時間日期處理</a><br>
+              <span style="font-size:13px; color:darkgray;">2019/05/15</span>
+        </h2>
+        <div class="post-content">在處理時序資料的時候，常會遇到需要進行時間轉換的問題像是查詢往後22天的日期是哪一天 ?這個日期是星期幾 ?如何將字串轉成 datetime 格式 ?
+以下介紹兩個在處理時間常會用到的 python 
+      </div>
 
       <div class="bottom-panel">
-        <!-- <ul class="social-likes" data-url="/TensorFlow-and-CUDA-version-combinations/">
+        <!-- <ul class="social-likes" data-url="https://wunoodles.github.io/時間日期處理/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
         </ul> -->
+        <a href="https://wunoodles.github.io/時間日期處理/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
-      
+
     
-    <div class="widget post-comment">
-      <h2 class="title">Comments</h2>
-      <section id="comments">
-        <div id="disqus_thread">
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-      
-    </section></div>
-    
+
+<ul class="paging box">
+  
+  <span class="page-number">Page 1 of 1</span>
+  
+</ul>
+
   </div>
-  <div id="totop" style="position:fixed;bottom:150px; right:5%; cursor: pointer;">
-    <a title="返回頂部"><img width="30%" src="/images/totop.png"></a>
-</div>
+
   <div class="widgetarea">
 
     
@@ -112,6 +104,8 @@ print(device_lib.list_local_devices())
   <div style="text-align:center">
     
     <a class="button" href="/tags/tensorflow/">tensorflow</a>
+    
+    <a class="button" href="/tags/Python/">Python</a>
     
   </div>
   
@@ -177,8 +171,6 @@ print(device_lib.list_local_devices())
   </div>
 </div>
 
-<script src="/js/totop.js"></script>
-
 
   </div>
   
@@ -197,13 +189,11 @@ print(device_lib.list_local_devices())
 <script>
   var disqus_shortname = 'noodles-1';
   
-  var disqus_url = 'https://wunoodles.github.io/TensorFlow-and-CUDA-version-combinations/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
+    dsq.src = '//go.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

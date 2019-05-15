@@ -48,6 +48,47 @@
 <!-- 
 
     <div class="post box nocover">
+      <em class="date"><span>15</span>May</em>
+      <h2 class="post-title"><a href="/時間日期處理/">時間日期處理</a></h2>
+      <div class="post-content">在處理時序資料的時候，常會遇到需要進行時間轉換的問題像是查詢往後22天的日期是哪一天 ?這個日期是星期幾 ?如何將字串轉成 datetime 格式 ?
+以下介紹兩個在處理時間常會用到的 python package，分別是 datetime 以及 dateutil 
+- datetime
+查詢現在時間
+12345import datetimedatetime.datetime.now()#datetime.datetime(2019, 5, 15, 22, 10, 54, 789000)datetime.date.today()#datetime.date(2019, 5, 15)
+
+將datetime及date轉成字串
+12datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")#'2019-05-15 22:01:57'
+
+
+
+%y 兩
+      </div>
+ -->
+      
+      <div class="post box nocover">
+        <em class="date"><span>15</span>May</em>
+        <h2 class="post-title">
+              <a href="/時間日期處理/">時間日期處理</a><br>
+              <span style="font-size:13px; color:darkgray;">2019/05/15</span>
+        </h2>
+        <div class="post-content">在處理時序資料的時候，常會遇到需要進行時間轉換的問題像是查詢往後22天的日期是哪一天 ?這個日期是星期幾 ?如何將字串轉成 datetime 格式 ?
+以下介紹兩個在處理時間常會用到的 python 
+      </div>
+
+      <div class="bottom-panel">
+        <!-- <ul class="social-likes" data-url="https://wunoodles.github.io/時間日期處理/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul> -->
+        <a href="https://wunoodles.github.io/時間日期處理/#disqus_thread" class="btn-comment">Comments</a>
+      </div>
+    </div>
+
+
+<!-- 
+
+    <div class="post box nocover">
       <em class="date"><span>26</span>Feb</em>
       <h2 class="post-title"><a href="/python資料分析的好套件-Pandas/">python資料分析的好套件: Pandas</a></h2>
       <div class="post-content">DataFrame 可以說是 pandas的主體，我們可以將它視為好幾個Series集合再一起，共用相同的索引 。DataFrame 可以完成很多方便的事情，像是可以使用類似sql的用法，或是rolling等等。以下會列出幾個非常實用的例子:
@@ -227,7 +268,7 @@ Genera
 </div>
 
 
-<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/tensorflow/" style="font-size: 24px;">tensorflow</a></div>
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/tensorflow/" style="font-size: 12px;">tensorflow</a></div>
 
     
 
@@ -236,6 +277,14 @@ Genera
 
 <ul class="widget blogroll">
   <h3 class="title">Recent Post</h3>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/時間日期處理/">時間日期處理</a></h3>
+        <p>在處理時序資料的時候，常會遇到需要進行時間轉換的問題像是查詢往後22天的日期是哪一天 ?這個日期是星</p>
+      </div>
+    </li>
   
     
     <li>
